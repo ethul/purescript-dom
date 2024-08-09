@@ -48,16 +48,16 @@ exports.setCharset = function (charset) {
 
 // ----------------------------------------------------------------------------
 
-exports.async = function (script) {
+exports['async'] = function (script) {
   return function () {
-    return script.async;
+    return script['async'];
   };
 };
 
-exports.setAsync = function (async) {
+exports.setAsync = function (a) {
   return function (script) {
     return function () {
-      script.async = async;
+      script['async'] = a;
     };
   };
 };
